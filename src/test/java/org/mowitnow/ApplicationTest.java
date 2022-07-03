@@ -51,10 +51,9 @@ public class ApplicationTest {
 
     @Test
     public void successTest() throws FileNotFoundException, FileFormatValidationException {
-        Application.main(PATH + "sucess_file.txt");
+        Application.main(PATH + "success_input_file.txt");
         assertNotNull(Application.outputResults);
         assertEquals(Application.outputResults.size(), 2);
-        System.out.println(Application.outputResults);
         assertEquals("1 3 N", Application.outputResults.get(0));
         assertEquals("5 1 E", Application.outputResults.get(1));
     }
