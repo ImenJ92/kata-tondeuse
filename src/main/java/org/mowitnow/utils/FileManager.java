@@ -10,7 +10,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+
 public class FileManager {
+    /**
+     * extractParameters est la méthode qui permet la lecture du fichier d'entrée et l'appel aux méthodes extractant les
+     * paramètres nécessaires
+     * @param file
+     * @return InputParameters: les paramètres extraits à partir du fichier d'entrée
+     * @throws FileFormatValidationException
+     * @throws FileNotFoundException
+     */
     public static InputParameters extractParameters(File file) throws FileFormatValidationException, FileNotFoundException {
         int id = 0;
         InputParameters inputParameters = new InputParameters();

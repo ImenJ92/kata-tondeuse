@@ -9,6 +9,13 @@ import org.mowitnow.model.Tondeuse;
 import java.util.List;
 
 public class TondeuseManager {
+    /**
+     * appliquer l'ensemble des actions sur la Tondeuse et la retourner avec les attributs résultants
+     * @param tondeuse
+     * @param actions
+     * @param pelouse
+     * @return Tondeuse: la tondeuse avec ses nouveaux attributs
+     */
     public static Tondeuse applyAction(Tondeuse tondeuse, List<Action> actions, Pelouse pelouse) {
         for (int i = 0; i < actions.size(); i++) {
             switch (actions.get(i)) {
@@ -26,6 +33,12 @@ public class TondeuseManager {
         return tondeuse;
     }
 
+    /**
+     * déterminer les nouveaux coordonnées suite à un avancement de la tondeuse
+     * @param tondeuse
+     * @param pelouse
+     * @return Coordonnées: nouveaux coordonnées de la tondeuse
+     */
     private static Coordonnees avancer(Tondeuse tondeuse, Pelouse pelouse) {
         int x = tondeuse.getCoordonneesActuelles().getX();
         int y = tondeuse.getCoordonneesActuelles().getY();
@@ -53,6 +66,11 @@ public class TondeuseManager {
     }
 
 
+    /**
+     * déterminer la nouvelle orientation de la tondeuse suite à une pivotation a droite
+     * @param orientation
+     * @return Orientation
+     */
     public static Orientation tournerADroite(Orientation orientation) {
         switch (orientation) {
             case NORTH:
@@ -67,6 +85,11 @@ public class TondeuseManager {
         return orientation;
     }
 
+    /**
+     * déterminer la nouvelle orientation de la tondeuse suite à une pivotation a gauche
+     * @param orientation
+     * @return Orientation
+     */
     public static Orientation tournerAGauche(Orientation orientation) {
         switch (orientation) {
             case NORTH:
@@ -81,6 +104,11 @@ public class TondeuseManager {
         return orientation;
     }
 
+    /**
+     * retourner le résultat associé à une tondeuse sous le format attendu
+     * @param tondeuse
+     * @return String: le résultat attendu sous le format X Y O
+     */
     public static String outputDisplay(Tondeuse tondeuse) {
         return new StringBuilder().append(tondeuse.getCoordonneesActuelles().getX()).append(" ").
                 append(tondeuse.getCoordonneesActuelles().getY()).append(" ").
